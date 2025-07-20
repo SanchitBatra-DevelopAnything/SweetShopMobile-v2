@@ -343,14 +343,13 @@ class _MyOrdersState extends State<MyOrders> {
                                               color: Colors.white,
                                             ),
                                             title: Text(
-                                              regularOrderList[index]
-                                                      ["deliveryTime"] +
-                                                  " Tak Chahiye ",
-                                              style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
+                                               (regularOrderList[index]["deliveryTimeToShow"] ?? regularOrderList[index]["deliveryTime"]) + " Tak Chahiye ",
+  style: const TextStyle(
+    color: Colors.white,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  ),
+),
                                             subtitle: Container(
                                               margin: const EdgeInsets.only(top: 7),
                                               child: Text(
@@ -409,14 +408,14 @@ class _MyOrdersState extends State<MyOrders> {
                                               color: Colors.white,
                                             ),
                                             title: Text(
-                                              customOrderList[index]
-                                                      ["deliveryTime"] +
-                                                  " Tak Chahiye ",
-                                              style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
+  (customOrderList[index]["deliveryTimeToShow"] ?? customOrderList[index]["deliveryTime"]) + " Tak Chahiye ",
+  style: const TextStyle(
+    color: Colors.white,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  ),
+),
+
                                             subtitle: Container(
                                               margin: const EdgeInsets.only(top: 7),
                                               child: Text(
