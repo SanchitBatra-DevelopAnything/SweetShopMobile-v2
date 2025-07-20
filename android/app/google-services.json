@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "537947242576",
+    "firebase_url": "https://shastri-nagar-shop-app-default-rtdb.firebaseio.com",
+    "project_id": "shastri-nagar-shop-app",
+    "storage_bucket": "shastri-nagar-shop-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537947242576:android:cb516e708ee21565421155",
+        "android_client_info": {
+          "package_name": "com.example.sweet_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537947242576-qf9vfahskk9162vbugaiegbmq1klos34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtNTQSnT3RMFHPLlLEtg7C9CBN1e2Yrhc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537947242576-qf9vfahskk9162vbugaiegbmq1klos34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537947242576:android:6fe484440d0cb7a5421155",
+        "android_client_info": {
+          "package_name": "com.sweetshop.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537947242576-qf9vfahskk9162vbugaiegbmq1klos34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtNTQSnT3RMFHPLlLEtg7C9CBN1e2Yrhc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537947242576-qf9vfahskk9162vbugaiegbmq1klos34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
