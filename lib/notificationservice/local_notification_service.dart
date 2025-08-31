@@ -28,6 +28,25 @@ class LocalNotificationService {
     await _requestPermissions();
   }
 
+  Future<void> setupNotificationChannel() async {
+
+    final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+  const channel = AndroidNotificationChannel(
+    'Sweet-Shop-App-3', // 👈 must match channel_id from function
+    'Sweet Shop Notifications',
+    description: 'Sweet Shop order bell',
+    importance: Importance.high,
+    playSound: true,
+    sound: RawResourceAndroidNotificationSound('sound'),
+  );
+
+  await flutterLocalNotificationsPlugin
+      .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
+      ?.createNotificationChannel(channel);
+}
+
   static Future<void> _requestPermissions() async {
     // Android 13+ notifications permission
     if (await Permission.notification.isDenied ||
