@@ -52,23 +52,27 @@ class _MyOrdersState extends State<MyOrders> {
     );
 
     // 2. This method only call when App in forground it mean app must be opened
-    FirebaseMessaging.onMessage.listen(
-      (message) {
-        print("Wanna play sound?????? YES!");
-        final player = AudioPlayer();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await player.setSource(AssetSource('sound.mp3'));
-      await player.resume();
-    });
-        print("FirebaseMessaging.onMessage.listen");
-        if (message.notification != null) {
-          print(message.notification!.title);
-          print(message.notification!.body);
-          print("message.data11 ${message.data}");
-          //LocalNotificationService.createanddisplaynotification(message);
-        }
-      },
-    );
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
+  print("Wanna play sound?????? YES!");
+
+  try {
+    final player = AudioPlayer();
+    await player.setSource(AssetSource('sound.mp3')); // Make sure sound.mp3 is in assets folder and declared in pubspec.yaml
+    await player.resume();
+  } catch (e) {
+    print("Error playing sound: $e");
+  }
+
+  print("FirebaseMessaging.onMessage.listen");
+  if (message.notification != null) {
+    print("Title: ${message.notification!.title}");
+    print("Body: ${message.notification!.body}");
+    print("Data: ${message.data}");
+    // If you want to show local notification also:
+    // await LocalNotificationService.createAndDisplayNotification(message);
+  }
+});
+
 
     // 3. This method only call when App in background and not terminated(not closed)
     FirebaseMessaging.onMessageOpenedApp.listen(

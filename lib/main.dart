@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:sweet_shop_v2/customOrderDetail.dart';
+import 'package:sweet_shop_v2/notificationservice/local_notification_service.dart';
 import 'package:sweet_shop_v2/providers/notificationProvider.dart';
 import 'package:sweet_shop_v2/providers/orderProvider.dart';
 import 'package:sweet_shop_v2/regularOrderDetail.dart';
@@ -13,8 +15,12 @@ import 'package:provider/provider.dart';
 import 'myOrders.dart';
 
 Future<void> backgroundHandler(RemoteMessage message) async {
-  print(message.data.toString());
-  print(message.notification!.title);
+  final player = AudioPlayer();
+  await player.setSource(AssetSource('sound.mp3'));
+  await player.resume();
+
+  // Show notification as well (if you want to display one)
+  await LocalNotificationService.createAndDisplayNotification(message);
 }
 
 void main() async {
